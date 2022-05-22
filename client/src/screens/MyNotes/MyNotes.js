@@ -14,12 +14,13 @@ const MyNotes = () => {
     }
   }
 
-  const fetchNotes = async ()=> {
-    const {data} = await axios.get("/notes");
+  const fetchNotes = async () => {
+    const { data } = await axios.get("/notes");
     setNotes(data)
     console.log(data, "data", notes)
   }
-  useEffect(()=> {
+  
+  useEffect(() => {
     fetchNotes();
   }, []);
 
@@ -48,8 +49,8 @@ const MyNotes = () => {
                       variant="link"
                       eventKey="0"
                     > */}
-                    
-                      {card.title}
+
+                    {card.title}
                     {/* </Accordion.Toggle> */}
                   </span>
                   <div>
@@ -64,21 +65,21 @@ const MyNotes = () => {
                   </div>
                 </Card.Header>
                 {/* <Accordion.Collapse eventKey="0"> */}
-                  <Card.Body>
-                    <h4>
-                      <Badge bg="success" variant="success">
-                        Catogory-{card.category}
-                      </Badge>
-                    </h4>
-                    <blockquote className="blockquote mb-0">
-                      <p>
-                        {card.content}
-                      </p>
-                      <footer className="blockquote-footer">
-                        --Created On Date:
-                      </footer>
-                    </blockquote>
-                  </Card.Body>
+                <Card.Body>
+                  <h4>
+                    <Badge bg="success" variant="success">
+                      Catogory-{card.category}
+                    </Badge>
+                  </h4>
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      {card.content}
+                    </p>
+                    <footer className="blockquote-footer">
+                      --Created On Date:
+                    </footer>
+                  </blockquote>
+                </Card.Body>
                 {/* </Accordion.Collapse> */}
               </Card>
             </Accordion>
